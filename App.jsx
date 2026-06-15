@@ -208,9 +208,13 @@ export default function App() {
     const next=[...msgs,um];
     setMsgs(next);setInput("");setLoading(true);
     try{
-      const res=await fetch("https://api.anthropic.com/v1/messages",{method:"POST",headers:{"Content-Type":"application/json"},
-        body:JSON.stringify({model:"claude-sonnet-4-6",max_tokens:2000,system:SYSTEM_PROMPT,messages:next.map(m=>({role:m.role,content:m.content}))})});
-      const data=await res.json();
+      const res = await fetch("/api/chat", {method: "POST", headers: { "Content-Type": "application/json"},
+       body: JSON.stringify({model: "claude-sonnet-4-6",max_tokens: 2000,system: SYSTEM_PROMPT, messages: next.map(m => ({ role: m.role,
+      content: m.content
+    }))
+  })
+});
+        const data=await res.json();
       const reply=data.content?.find(b=>b.type==="text")?.text||"";
       const parsed=parseJSON(reply);
       if(parsed?.phases){
