@@ -13,33 +13,7 @@
 - ⬇️ **Download** الـ Roadmap والـ To-Do List
 - 🌙☀️ **Dark / Light Mode**
 - 🃏 **3D Card Effects** مع floating particles
-
----
-
-## 🚀 التشغيل المحلي
-
-```bash
-npm install
-npm run dev
-```
-
----
-
-## 🌐 الرفع على Vercel
-
-### الطريقة الأولى — Vercel CLI
-
-```bash
-npm install -g vercel
-vercel
-```
-
-### الطريقة التانية — GitHub + Vercel Dashboard
-
-1. ارفع المشروع على GitHub
-2. روح [vercel.com](https://vercel.com) → **New Project**
-3. Import الـ repo
-4. اضغط **Deploy** — خلاص! 🎉
+Deploy** — خلاص! 🎉
 
 > **ملاحظة:** الـ API Key بتاع Anthropic بيتحط تلقائياً من الـ claude.ai artifact system. لو رفعته standalone محتاج تضيف `VITE_ANTHROPIC_KEY` في Vercel Environment Variables وتعدّل الـ fetch في `App.jsx`.
 
